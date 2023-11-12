@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Todo } from '../todo.service';
 
 @Component({
@@ -9,16 +9,16 @@ import { Todo } from '../todo.service';
 })
 export class FormComponent implements OnInit {
 
-  formulario: FormGroup;
+  formulario: UntypedFormGroup;
 
   @Output() todoCreated: EventEmitter<Todo>;
 
   constructor() {
     this.todoCreated = new EventEmitter();
-    this.formulario = new FormGroup({
-      autor: new FormControl(),
-      titulo: new FormControl(),
-      descripcion: new FormControl()
+    this.formulario = new UntypedFormGroup({
+      autor: new UntypedFormControl(),
+      titulo: new UntypedFormControl(),
+      descripcion: new UntypedFormControl()
     })
   }
 
